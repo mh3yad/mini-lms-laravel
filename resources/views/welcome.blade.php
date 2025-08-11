@@ -20,7 +20,7 @@
         @endif
     </head>
     <body class="bg-[#FDFDFC] dark:bg-[#0a0a0a] text-[#1b1b18] flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col">
-    <a href="{{ route('courses.index') }}" class="btn btn-success">Course</a>
+    <a href="{{ route('login') }}" class="btn btn-success">Login</a>
 
     @if (Route::has('login'))
             <div class="h-14.5 hidden lg:block"></div>

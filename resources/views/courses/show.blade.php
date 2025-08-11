@@ -1,16 +1,15 @@
-@extends('layouts.app')
+<x-app-layout>
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 py-8">
+        <h1 class="text-2xl font-bold mb-6">All Courses</h1>
 
-@section('content')
-    <div class="container">
-        <h1>All Courses</h1>
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h3 class="card-title">{{ $course->title }}</h3>
-                    <p class="card-text">{{ $course->description }}</p>
-                    <p class="text-muted">
-                        Teacher: {{ $course->teacher?->name ?? 'N/A' }}
-                    </p>
-                </div>
+        <div class="bg-white shadow rounded-lg mb-4">
+            <div class="p-6">
+                <h3 class="text-lg font-semibold text-gray-800">{{ $course->title }}</h3>
+                <p class="mt-2 text-gray-600">{{ $course->description }}</p>
+                <p class="mt-4 text-sm text-gray-500">
+                    Teacher: {{ $course->teacher?->name ?? 'N/A' }}
+                </p>
             </div>
+        </div>
     </div>
-@endsection
+</x-app-layout>

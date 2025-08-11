@@ -1,10 +1,10 @@
 <?php
 
-use App\Models\Course;
+namespace App\Repositories\Contract;
 
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
-interface BaseRepositoryContract
+interface BaseContract
 {
     /**
      * @param int $id
@@ -20,9 +20,9 @@ interface BaseRepositoryContract
     /**
      * @param int $id
      * @param array $data
-     * @return Model
+     * @return bool
      */
-    public function update(int $id, array $data): Model;
+    public function update(int $id, array $data): bool;
 
     /**
      * @param array $data

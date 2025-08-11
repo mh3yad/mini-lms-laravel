@@ -2,11 +2,11 @@
 
 namespace App\Repositories;
 
-use BaseContract;
+use App\Repositories\Contract\BaseContract;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
-abstract class Base implements BaseContract
+abstract class BaseRepository implements BaseContract
 {
     /**
      * @param Model $model
@@ -22,7 +22,7 @@ abstract class Base implements BaseContract
      */
     public function find(int $id): ?Model
     {
-        return $this->model->find($id);
+        return $this->model::find($id);
     }
 
     /**
@@ -30,17 +30,17 @@ abstract class Base implements BaseContract
      */
     public function findAll(): Collection
     {
-        return $this->model->get();
+        return $this->model::all();
     }
 
     /**
      * @param int $id
      * @param array $data
-     * @return Model
+     * @return bool
      */
-    public function update(int $id, array $data): Model
+    public function update(int $id, array $data): bool
     {
-        return $this->model->where('id', $id)->update($data);
+        return $this->model->where('id',$id)->update($data);
     }
 
     /**
@@ -58,6 +58,6 @@ abstract class Base implements BaseContract
      */
     public function delete(int $id): bool
     {
-       return $this->model->delete($id);
+        return $this->model->destroy($id);
     }
 }

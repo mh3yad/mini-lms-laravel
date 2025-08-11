@@ -33,12 +33,12 @@ class UserFactory extends Factory
         ];
     }
 
-    public function teacher()
+    public function teacher(): Factory|UserFactory
     {
         return $this->state(fn () => ['role' => 'teacher']);
     }
 
-    public function student()
+    public function student(): Factory|UserFactory
     {
         return $this->state(fn () => ['role' => 'student']);
     }
